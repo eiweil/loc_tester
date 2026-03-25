@@ -19,7 +19,52 @@
 		
 	</tr>
 
-	<tr>
+	<tr vertical-align="top">
+		<td>
+			<h2> Patient Information (optional) </h2>
+			<p> Example ID: </p>
+			<input id="id" type="number" min="0" required>
+			<p> Category (elderly, mental health, etc): </p>
+			<input id="cat" type="text">
+			<p> Old LOC total score: </p>
+			<input id="old_loc" type="number" min="0" max="81" required>
+			
+			<button type="button" onclick="updateScores()"> Update Scores </button>
+			
+			<h4> New LOC total score: <span id="new_loc_total"></span></h4>
+			
+			<p> LOC Behavioral: <span id="loc_behavioral"></span></p>
+			
+			<p> LOC Cognition: <span id="loc_cognition"></span></p>
+			<p id="loc_cognition_trigger"></p>
+
+			<p> LOC Mobility: <span id="loc_mobility"></span></p>
+			<p id="loc_mobility_trigger"></p>
+
+			<p> LOC Eating: <span id="loc_eating"></span></p>
+			<p id="loc_eating_trigger"></p>
+
+			<p> LOC Toileting: <span id="loc_toileting"></span></p>
+
+			<p> LOC Bathing: <span id="loc_bathing"></span></p>
+
+			<p> LOC Dressing and Grooming: <span id="loc_dressing"></span></p>
+			
+			<p> LOC Rehabilitation: <span id="loc_rehabilitation"></span></p>
+			
+			<p> LOC Treatments: <span id="loc_treatments"></span></p>
+
+			<p> LOC Managing Medications: <span id="loc_medications"></span> </p>
+			
+			<p> LOC Meal Prep: <span id="loc_mealprep"></span></p>
+
+			<p> LOC Safety: <span id="loc_safety"></span></p>	
+			<p> (Interim Safety score from Part 1: <span id="loc_safety1"></span>)</p>
+			<p> (Change in Safety score after Part 2: <span id="loc_safety2"></span>)</p>
+			<p id="loc_safety_trigger"></p>
+
+		</td>
+		
 		<td>
 			<p> A3     -    Age <input id="A3" type="number"></p>
 			<p> B4a    -    Long Term Care Facility <input id="B4a" type="number"></p>
@@ -80,68 +125,7 @@
 			<p>	N7b    -    Mental Condition <input id="N7b" type="number"> </p>			
 		</td>
 
-		<td>
-			<h2> Patient Information (optional) </h2>
-			<p> Example ID: </p>
-			<input id="id" type="number" min="0" required>
-			<p> Category (elderly, mental health, etc): </p>
-			<input id="cat" type="text">
-			<p> Old LOC total score: </p>
-			<input id="old_loc" type="number" min="0" max="81" required>
-			
-			<button type="button" onclick="updateScores()"> Update Scores </button>
-			
-			<h4> New LOC total score: </h4>
-			<p id="new_loc_total"></p>
-
-			<h4> LOC Behavioral: </h4>
-			<p id="loc_behavioral"></p>
-
-			<h4> LOC Cognition: </h4>
-			<p id="loc_cognition"></p>
-			<p id="loc_cognition_trigger"></p>
-
-			<h4> LOC Mobility: </h4>
-			<p id="loc_mobility"></p>
-			<p id="loc_mobility_trigger"></p>
-
-			<h4> LOC Eating: </h4>
-			<p id="loc_eating"></p>
-			<p id="loc_eating_trigger"></p>
-
-			<h4> LOC Toileting: </h4>
-			<p id="loc_toileting"></p>
-
-			<h4> LOC Bathing: </h4>
-			<p id="loc_bathing"></p>
-
-			<h4> LOC Dressing and Grooming: </h4>
-			<p id="loc_dressing"></p>
-
-			<h4> LOC Rehabilitation: </h4>
-			<p id="loc_rehabilitation"></p>
-
-			<h4> LOC Treatments: </h4>
-			<p id="loc_treatments"></p>
-
-			<h4> LOC Managing Medications: </h4>
-			<p id="loc_medications"></p>
-
-			<h4> LOC Meal Prep: </h4>
-			<p id="loc_mealprep"></p>
-
-			<h4> LOC Safety: </h4>
-			<p> Interim Safety score from Part 1:</p>
-			<p id="loc_safety1"></p>
-
-			<p> Change in Safety score after Part 2:</p>
-			<p id="loc_safety2"></p>
-			<p id="loc_safety_trigger"></p>
-
-			<p><b> Overall category score: </b></p>
-			<p id="loc_safety"></p>
-			
-		</td>
+		
 	</tr>
 
 
