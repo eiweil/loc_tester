@@ -436,23 +436,23 @@ function LOCSafety() {
 
 	if (new_loc_safety1 == 3 && 
 	   (a3 >= 75 && (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
-		new_loc_safety2 = 18; 
-		document.getElementById("loc_safety_trigger").innerHTML = "*TRIGGER";
-	}
-	else {
-		document.getElementById("loc_safety_trigger").innerHTML = "";
+		new_loc_safety2 = 18; // trigger
 	}
 
 	if (new_loc_safety1 == 6 && a3 >= 75) {
-		new_loc_safety2 = 18; 
+		new_loc_safety2 = 18; // trigger 
+	}
+	
+	// display new LOC for subcategory
+	document.getElementById("loc_safety2").innerHTML = new_loc_safety2;
+
+	// determine whether to display trigger
+	if (new_loc_safety2 == 18) {
 		document.getElementById("loc_safety_trigger").innerHTML = "*TRIGGER";
 	}
 	else {
 		document.getElementById("loc_safety_trigger").innerHTML = "";
 	}
-
-	// display new LOC for subcategory
-	document.getElementById("loc_safety2").innerHTML = new_loc_safety2;
 
 	// fill in the final safety score based on whether they get points in part 2
 	if (new_loc_safety2 == 0){
