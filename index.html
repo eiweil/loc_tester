@@ -14,14 +14,16 @@
 <div class="container"> 
 	
 		<div>
-			<h2> Patient Information (optional) </h2>
-			<p> Example ID: </p>
+			<h4> Optional for internal recordkeeping: </h4>
+			<p> ID: </p>
 			<input id="id" type="number" min="0" required>
 			<p> Category (elderly, mental health, etc): </p>
 			<input id="cat" type="text">
 			<p> Old LOC total score: </p>
 			<input id="old_loc" type="number" min="0" max="81" required>
 			<p></p>
+			<p></p>
+			<hr>
 			<button type="button" onclick="updateScores()"> Update Scores </button>
 			
 			<h4> New LOC total score: <span id="new_loc_total"></span></h4>
