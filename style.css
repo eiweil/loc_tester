@@ -8,4 +8,6 @@ div.container {
 div.container div {
   float:left;
   text-align:left;
+  padding-left:30px;
+  padding-right:30px;
 }
