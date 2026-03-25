@@ -1,27 +1,9 @@
 
 // find new LOC total score based on each subcategory
-function updateTotal() {
+function updateScores() {
 	var new_loc_total = 0;
 
-	var subcategories = ["loc_behavioral", "loc_cognition", "loc_mobility", 
-						"loc_eating", "loc_toileting", "loc_bathing", "loc_dressing", 
-						"loc_rehabilitation", "loc_treatments", "loc_medications",
-						"loc_mealprep", "loc_safety"]; 
-	// check for invalid subtotal first then add to running total 
-	for (var i = 0; i < subcategories.length; i++) {
-
-		var temp = Number(document.getElementById(subcategories[i]).innerHTML);
-		if (temp > 0) {
-			new_loc_total += temp;
-		} 
-	}
-
-	document.getElementById("new_loc_total").innerHTML = new_loc_total;
-	
-}
-
-
-function LOCBehavioral() {
+// Behavioral
 	var e3a = document.getElementById("E3a").value;
 	var e3c = document.getElementById("E3c").value;
 	var e3d = document.getElementById("E3d").value;
@@ -74,11 +56,9 @@ function LOCBehavioral() {
 	}
 
 	document.getElementById("loc_behavioral").innerHTML = new_loc_behavioral;
-	updateTotal();
+	new_loc_total += new_loc_behavioral;
 
-} 
-
-function LOCCognition() {
+// Cognition 
 	var c1 = document.getElementById("C1").value;
 	var c2a = document.getElementById("C2a").value;
 	var c2b = document.getElementById("C2b").value;
@@ -125,12 +105,9 @@ function LOCCognition() {
 	}
 
 	document.getElementById("loc_cognition").innerHTML = new_loc_cognition;
-	updateTotal();
+	new_loc_total += new_loc_cognition; 
 
-}
-
-function LOCMobility() {
-	// grab values from the form
+// Mobility 
 	var g2f = document.getElementById("G2f").value;
 	var g2i = document.getElementById("G2i").value;
 	var g3a = document.getElementById("G3a").value;
@@ -156,11 +133,9 @@ function LOCMobility() {
 	
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_mobility").innerHTML = new_loc_mobility;
-	updateTotal();
-}
-
-function LOCEating() {
-	// grab values from the form
+	new_loc_total += new_loc_mobility;
+	
+// Eating
 	var g2j = document.getElementById("G2j").value;
 	var k2e = document.getElementById("K2e").value;
 
@@ -190,11 +165,9 @@ function LOCEating() {
 	
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_eating").innerHTML = new_loc_eating;
-	updateTotal();
-}
+	new_loc_total += new_loc_eating;
 
-function LOCToileting() {
-	// grab values from the form
+// Toileting
 	var g2g = document.getElementById("G2g").value;
 	var g2h = document.getElementById("G2h").value;
 
@@ -215,11 +188,9 @@ function LOCToileting() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_toileting").innerHTML = new_loc_toileting;
-	updateTotal();
-}
+	new_loc_total += new_loc_toileting; 
 
-function LOCBathing() {
-	// grab values from the form
+// Bathing
 	var g2a = document.getElementById("G2a").value;
 
 	var new_loc_bathing = 0;
@@ -234,11 +205,9 @@ function LOCBathing() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_bathing").innerHTML = new_loc_bathing;
-	updateTotal();
-}
+	new_loc_total += new_loc_bathing;
 
-function LOCDressing() {
-	// grab values from the form
+// Dressing
 	var g2b = document.getElementById("G2b").value;
 	var g2c = document.getElementById("G2c").value;
 	var g2d = document.getElementById("G2d").value;
@@ -259,11 +228,9 @@ function LOCDressing() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_dressing").innerHTML = new_loc_dressing;
-	updateTotal();
-}
+	new_loc_total += new_loc_dressing;
 
-function LOCRehabilitation() {
-	// grab values from the form
+// Rehabilitation 
 	var n3ea = document.getElementById("N3ea").value;
 	var n3fa = document.getElementById("N3fa").value;
 	var n3ga = document.getElementById("N3ga").value;
@@ -291,11 +258,9 @@ function LOCRehabilitation() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_rehabilitation").innerHTML = new_loc_rehabilitation;
-	updateTotal();
-}
+	new_loc_total += new_loc_rehabilitation;
 
-function LOCTreatments() {
-	// grab values from the form
+// Treatments 
 	var h1 = document.getElementById("H1").value;
 	var h2 = document.getElementById("H2").value;
 	var h3 = document.getElementById("H3").value;
@@ -326,11 +291,9 @@ function LOCTreatments() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_treatments").innerHTML = new_loc_treatments;
-	updateTotal();
-}
+	new_loc_total += new_loc_treatments;
 
-function LOCMedications() {
-	// grab values from the form
+// Medications
 	var g1d = document.getElementById("G1d").value;
 
 	var new_loc_medications = 0;
@@ -345,11 +308,9 @@ function LOCMedications() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_medications").innerHTML = new_loc_medications;
-	updateTotal();
-}
+	new_loc_total += new_loc_medications;
 
-function LOCMealprep() {
-	// grab values from the form
+// Meal prep
 	var g1a = document.getElementById("G1a").value;
 
 	var new_loc_mealprep = 0;
@@ -364,11 +325,9 @@ function LOCMealprep() {
 
 	// display new LOC for subcategory and update total
 	document.getElementById("loc_mealprep").innerHTML = new_loc_mealprep;
-	updateTotal();
-}
+	new_loc_total += new_loc_mealprep;
 
-function LOCSafety() {
-	// grab values from the form
+// Safety pt 1
 	var d4 = document.getElementById("D4").value;
 	var j1 = document.getElementById("J1").value;
 	var j3a = document.getElementById("J3a").value;
@@ -413,6 +372,7 @@ function LOCSafety() {
 	// display new LOC for subcategory part 1
 	document.getElementById("loc_safety1").innerHTML = new_loc_safety1;
 
+// Safety pt 2	
 	if (new_loc_safety1 == 0 && 
 	   (a3 >= 75 || b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1)) {
 		new_loc_safety2 = 3; 
@@ -456,12 +416,17 @@ function LOCSafety() {
 	// fill in the final safety score based on whether they get points in part 2
 	if (new_loc_safety2 == 0){
 		document.getElementById("loc_safety").innerHTML = new_loc_safety1;
+		new_loc_total += new_loc_safety1;
 	}
 	else {
 		document.getElementById("loc_safety").innerHTML = new_loc_safety2;
+		new_loc_total += new_loc_safety2;
 	}
 
-	updateTotal();
+	 
+	// Display new total score
+	document.getElementById("new_loc_total").innerHTML = new_loc_total;
+	
 }
 
 // takes user uploaded csv file and will run the preceeding functions on all rows 
