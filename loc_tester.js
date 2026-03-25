@@ -1,6 +1,5 @@
 
 // find new LOC total score based on each subcategory
-// invalid subtotals have a value of -1 and we do not want to sum these, so check first
 function updateTotal() {
 	var new_loc_total = 0;
 
@@ -470,5 +469,3 @@ function LOCSafety() {
 function BatchProcess() {
 	// TODO
 }
-
-
