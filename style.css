@@ -1,6 +1,11 @@
 body {
 	font-family: arial;
 }
-td {
-  vertical-align: top;
+div.container {
+  width:90%;
+  overflow:auto;
+}
+div.container div {
+  width:50%;  
+  float:left;
 }
