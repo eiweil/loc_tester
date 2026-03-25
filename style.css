@@ -10,3 +10,7 @@ div.container div {
   float:left;
   text-align:left;
 }
+.button {
+  border: none;
+  padding: 15px 32px;
+}
