@@ -20,7 +20,7 @@
 	</tr>
 
 	<tr vertical-align="top">
-		<td>
+		<td vertical-align="top">
 			<h2> Patient Information (optional) </h2>
 			<p> Example ID: </p>
 			<input id="id" type="number" min="0" required>
@@ -28,7 +28,7 @@
 			<input id="cat" type="text">
 			<p> Old LOC total score: </p>
 			<input id="old_loc" type="number" min="0" max="81" required>
-			
+			<p></p>
 			<button type="button" onclick="updateScores()"> Update Scores </button>
 			
 			<h4> New LOC total score: <span id="new_loc_total"></span></h4>
@@ -122,253 +122,13 @@
 			<p>	N3fa   -    OT <input id="N3fa" type="number"></p>
 			<p>	N3ga   -    Speech <input id="N3ga" type="number"></p>
 			<p>	N3ia   -    Cardiac Rehab <input id="N3ia" type="number"></p>
-			<p>	N7b    -    Mental Condition <input id="N7b" type="number"> </p>			
+			<p>	N7b    -    Mental Condition <input id="N7b" type="number"> </p>	
+			<p></p>
+			<button type="button" onclick="updateScores()"> Update Scores </button>
+			<p></p>
+			<p></p>
 		</td>
 
-		
-	</tr>
-
-
-
-
-	<tr> 
-		
-		<td> 
-			<h2> Blended LOC System </h2>
-			<h3> Behavioral </h3>
-			<p> E3a    -    Wandering <input id="E3a" type="number"> </p>
-			<p>	E3c    -    Physical Abuse <input id="E3c" type="number"> </p>
-			<p>	E3d    -    Socially Inappropriate / Disruptive <input id="E3d" type="number"> </p>
-			<p>	E3e    -    Inappropriate Public Sexual Behavior <input id="E3e" type="number"> </p>
-			<p>	E3f    -    Resists Care <input id="E3f" type="number"> </p>
-			<p>	J3g    -    Abnormal Thought Process <input id="J3g" type="number"> </p>
-			<p>	J3h    -    Delusions <input id="J3h" type="number"> </p>          
-			<p>	J3i    -    Hallucinations <input id="J3i" type="number"> </p>
-			<p>	N7b    -    Mental Condition <input id="N7b" type="number"> </p>
-		</td>
-		<td>
-			<h4> LOC Behavioral: </h4>
-			<p id="loc_behavioral"></p>
-			<button type="button" onclick="LOCBehavioral()"> Update </button>
-		</td>
-	</tr>
-
-	<tr> 
-		<td>
-		</td>
-		<td> 
-			<h3> Cognition </h3>
-			<p> C1     -    Cognitive Skills <input id="C1" type="number"> </p>
-			<p>	C2a    -    Short Term Memory <input id="C2a" type="number"> </p>
-			<p>	C2b    -    Procedural Memory <input id="C2b" type="number"> </p>
-			<p>	C2c    -    Situational Memory <input id="C2c" type="number"> </p>
-			<p>	C3c    -    Mental Function <input id="C3c" type="number"> </p>
-			<p>	D1     -    Making Self Understood <input id="D1" type="number"> </p>
-			<p>	D2    -    Ability to Understand Others <input id="D2" type="number"> </p>
-		</td>
-		<td>
-			<h4> LOC Cognition: </h4>
-			<p id="loc_cognition"></p>
-			<p id="loc_cognition_trigger"></p>
-			<button type="button" onclick="LOCCognition()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Mobility </h3>
-			<p>	G2f    -    Locomotion <input id="G2f" type="number"></p>
-			<p>	G2i    -    Bed Mobility <input id="G2i" type="number"></p>
-			<p>	G3a    -    Primary mode of locomotion <input id="G3a" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Mobility: </h4>
-			<p id="loc_mobility"></p>
-			<p id="loc_mobility_trigger"></p>
-
-			<button type="button" onclick="LOCMobility()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Eating </h3>
-			<p> G2j    -    Eating <input id="G2j" type="number"></p>
-			<p> K2e    -    Therapeutic Diet <input id="K2e" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Eating: </h4>
-			<p id="loc_eating"></p>
-			<p id="loc_eating_trigger"></p>
-
-			<button type="button" onclick="LOCEating()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Toileting </h3>
-			<p> G2g    -    Transfer Toilet <input id="G2g" type="number"></p>
-			<p> G2h    -    Toilet Use <input id="G2h" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Toileting: </h4>
-			<p id="loc_toileting"></p>
-
-			<button type="button" onclick="LOCToileting()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Bathing </h3>
-			<p> G2a - Bathing <input id="G2a" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Bathing: </h4>
-			<p id="loc_bathing"></p>
-
-			<button type="button" onclick="LOCBathing()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Dressing and Grooming </h3>
-			<p> G2b    -    Personal Hygiene <input id="G2b" type="number"></p>
-			<p> G2c    -    Dressing Upper Body <input id="G2c" type="number"></p>
-			<p> G2d    -    Dressing Lower Body <input id="G2d" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Dressing and Grooming: </h4>
-			<p id="loc_dressing"></p>
-
-			<button type="button" onclick="LOCDressing()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Rehabilitation </h3>
-			<p> N3ea    -    PT <input id="N3ea" type="number"></p>
-			<p>	N3fa    -    OT <input id="N3fa" type="number"></p>
-			<p>	N3ga    -    Speech <input id="N3ga" type="number"></p>
-			<p>	N3ia    -    Cardiac Rehab <input id="N3ia" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Rehabilitation: </h4>
-
-			<p id="loc_rehabilitation"></p>
-
-			<button type="button" onclick="LOCRehabilitation()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Treatments </h3>
-			<p> H1    -    Bladder Continence <input id="H1" type="number"></p>
-			<p> H2    -    Urinary Collection Device <input id="H2" type="number"></p>
-			<p>	H3    -    Bowel Continence <input id="H3" type="number"></p>
-			<p>	K3    -    Mode of Nutrition <input id="K3" type="number"></p>
-			<p>	L1    -    Most Severe Pressure Ulcer <input id="L1" type="number"></p>
-			<p>	L3    -    Presence of Skin Ulcer Other than Pressure Ulcer <input id="L3" type="number"></p>
-			<p>	L4    -    Major Skin Problems <input id="L4" type="number"></p>
-			<p>	L5    -    Skin Tears of Cuts <input id="L5" type="number"></p>
-			<p>	N2g    -    Suctioning <input id="N2g" type="number"></p>
-			<p>	N2h    -    Tracheostomy Care <input id="N2h" type="number"></p>
-			<p>	N2j    -    Ventilator or Respirator <input id="N2j" type="number"></p>
-			<p>	N2k    -    Wound Care <input id="N2k" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Treatments: </h4>
-			<p id="loc_treatments"></p>
-
-			<button type="button" onclick="LOCTreatments()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Instrumental Activities of Daily Living </h3>
-			<h4> Managing Medications </h4>
-			<p> G1d     -     Managing Medications <input id="G1d" type="number"></p>
-		</td>
-		<td>
-			<h4> LOC Managing Medications: </h4>
-			<p id="loc_medications"></p>
-
-			<button type="button" onclick="LOCMedications()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h4> Meal Prep </h4>
-			<p> G1a     -     Meal Prep <input id="G1a" type="number"></p>
-
-		</td>
-		<td>
-			<h4> LOC Meal Prep: </h4>
-			<p id="loc_mealprep"></p>
-
-			<button type="button" onclick="LOCMealprep()"> Update </button>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-		</td>
-		<td>
-			<h3> Safety Part 1:</h3>
-			<p> D4     -     Vision <input id="D4" type="number"></p>
-			<p> J1     -     Falls <input id="J1" type="number"></p>
-			<p> J3a     -     Problem frequency to move to standing position <input id="J3a" type="number"></p>
-			<p> J3b     -     Problem frequency to turn to face opposite direction <input id="J3b" type="number"></p>
-			<p> J3c     -      Problem frequency for dizziness <input id="J3c" type="number"></p>
-			<p> J3d     -     Problem frequency for unsteady gait <input id="J3d" type="number"></p>
-
-			<h3> Safety Part 2 (uses Safety Pt. 1 score):</h3>
-			<p> A3     -     Age <input id="A3" type="number"></p>
-			<p> B4a     -     Long Term Care Facility <input id="B4a" type="number"></p>
-			<p> B4b     -     RCF/ALF <input id="B4b" type="number"></p>
-			<p> B4c     -     Mental Health Residence <input id="B4c" type="number"></p>
-			<p> B4d     -     Psychiatric Hospital or Unit <input id="B4d" type="number"></p>
-			<p> B4e     -     Settings for Persons with Intellectual Disability <input id="B4e" type="number"></p>
-
-		</td>
-		<td>
-			<h4> LOC Safety: </h4>
-			<p> Interim Safety score from Part 1:</p>
-			<p id="loc_safety1"></p>
-
-			<p> Change in Safety score after Part 2:</p>
-			<p id="loc_safety2"></p>
-			<p id="loc_safety_trigger"></p>
-
-			<p> Overall category score: </p>
-			<p id="loc_safety"></p>
-
-			<button type="button" onclick="LOCSafety()"> Update </button>
-		</td>
 	</tr>
 
 </table>
