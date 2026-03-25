@@ -6,7 +6,6 @@ div.container {
   overflow:auto;
 }
 div.container div {
-  width:50%;  
   float:left;
   text-align:left;
 }
