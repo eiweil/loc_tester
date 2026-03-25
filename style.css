@@ -8,4 +8,5 @@ div.container {
 div.container div {
   width:50%;  
   float:left;
+  text-align:left;
 }
