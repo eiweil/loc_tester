@@ -14,7 +14,7 @@
 		<td>
 		</td>
 		<td>
-			<h1> Qualification Testing Tool </h1>
+			<h1> LOC Testing Tool </h1>
 		</td>
 		<td width="20%">
 			<small> A value of -1 indicates the input do not map to a LOC according to the rules. This means the proposed algorithm may not cover every case. </small>
@@ -23,7 +23,7 @@
 
 	<tr> 
 		<td>
-			<h2> Patient Information </h2>
+			<h2> Patient Information (optional) </h2>
 			<p> Example ID: </p>
 			<input id="id" type="number" min="0" required>
 			<p> Category (elderly, mental health, etc): </p>
@@ -37,7 +37,6 @@
 			<h2> Blended LOC System </h2>
 			<h3> Behavioral </h3>
 			<p> E3a    -    Wandering <input id="E3a" type="number"> </p>
-			<p>	E3b    -    Verbal Abuse <input id="E3b" type="number"> </p>
 			<p>	E3c    -    Physical Abuse <input id="E3c" type="number"> </p>
 			<p>	E3d    -    Socially Inappropriate / Disruptive <input id="E3d" type="number"> </p>
 			<p>	E3e    -    Inappropriate Public Sexual Behavior <input id="E3e" type="number"> </p>
@@ -79,9 +78,7 @@
 		<td>
 		</td>
 		<td>
-			<h3> Activities of Daily Living </h3>
-			<h4> Mobility </h4>
-			<p> G2e    -    Walking <input id="G2e" type="number"></p>
+			<h3> Mobility </h3>
 			<p>	G2f    -    Locomotion <input id="G2f" type="number"></p>
 			<p>	G2i    -    Bed Mobility <input id="G2i" type="number"></p>
 			<p>	G3a    -    Primary mode of locomotion <input id="G3a" type="number"></p>
@@ -100,7 +97,7 @@
 		<td>
 		</td>
 		<td>
-			<h4> Eating </h4>
+			<h3> Eating </h3>
 			<p> G2j    -    Eating <input id="G2j" type="number"></p>
 			<p> K2e    -    Therapeutic Diet <input id="K2e" type="number"></p>
 		</td>
@@ -118,7 +115,7 @@
 		<td>
 		</td>
 		<td>
-			<h4> Toileting </h4>
+			<h3> Toileting </h3>
 			<p> G2g    -    Transfer Toilet <input id="G2g" type="number"></p>
 			<p> G2h    -    Toilet Use <input id="G2h" type="number"></p>
 		</td>
@@ -135,7 +132,7 @@
 		<td>
 		</td>
 		<td>
-			<h4> Bathing </h4>
+			<h3> Bathing </h3>
 			<p> G2a - Bathing <input id="G2a" type="number"></p>
 		</td>
 		<td>
@@ -151,7 +148,7 @@
 		<td>
 		</td>
 		<td>
-			<h4> Dressing and Grooming </h4>
+			<h3> Dressing and Grooming </h3>
 			<p> G2b    -    Personal Hygiene <input id="G2b" type="number"></p>
 			<p> G2c    -    Dressing Upper Body <input id="G2c" type="number"></p>
 			<p> G2d    -    Dressing Lower Body <input id="G2d" type="number"></p>
@@ -189,16 +186,18 @@
 		</td>
 		<td>
 			<h3> Treatments </h3>
+			<p> H1    -    Bladder Continence <input id="H1" type="number"></p>
 			<p> H2    -    Urinary Collection Device <input id="H2" type="number"></p>
 			<p>	H3    -    Bowel Continence <input id="H3" type="number"></p>
+			<p>	K3    -    Mode of Nutrition <input id="K3" type="number"></p>
 			<p>	L1    -    Most Severe Pressure Ulcer <input id="L1" type="number"></p>
 			<p>	L3    -    Presence of Skin Ulcer Other than Pressure Ulcer <input id="L3" type="number"></p>
 			<p>	L4    -    Major Skin Problems <input id="L4" type="number"></p>
+			<p>	L5    -    Skin Tears of Cuts <input id="L5" type="number"></p>
 			<p>	N2g    -    Suctioning <input id="N2g" type="number"></p>
+			<p>	N2h    -    Tracheostomy Care <input id="N2h" type="number"></p>
 			<p>	N2j    -    Ventilator or Respirator <input id="N2j" type="number"></p>
 			<p>	N2k    -    Wound Care <input id="N2k" type="number"></p>
-			<p>	N2h    -    Tracheostomy Care <input id="N2h" type="number"></p>
-			<p>	N2q    -    New or Unregulated Ostomy Care <input id="N2q" type="number"></p>
 		</td>
 		<td>
 			<h4> LOC Treatments: </h4>
@@ -247,19 +246,31 @@
 		<td>
 		</td>
 		<td>
-			<h3> Safety </h3>
+			<h3> Safety Part 1:</h3>
 			<p> D4     -     Vision <input id="D4" type="number"></p>
 			<p> J1     -     Falls <input id="J1" type="number"></p>
-			<p> J3a   <input id="J3a" type="number"></p>
-			<p> J3b   <input id="J3b" type="number"></p>
-			<p> J3c   <input id="J3c" type="number"></p>
-			<p> J3d   <input id="J3d" type="number"></p>
+			<p> J3a     -     Problem frequency to move to standing position <input id="J3a" type="number"></p>
+			<p> J3b     -     Problem frequency to turn to face opposite direction <input id="J3b" type="number"></p>
+			<p> J3c     -      Problem frequency for dizziness <input id="J3c" type="number"></p>
+			<p> J3d     -     Problem frequency for unsteady gait <input id="J3d" type="number"></p>
+
+			<h3> Safety Part 2 (uses Safety Pt. 1 score):</h3>
+			<p> Safety Score Part 1<input id="SSP1" type="number"></p>
+			<p> A3     -     Age <input id="A3" type="number"></p>
+			<p> B4a     -     Long Term Care Facility <input id="B4a" type="number"></p>
+			<p> B4b     -     RCF/ALF <input id="B4b" type="number"></p>
+			<p> B4c     -     Mental Health Residence <input id="B4c" type="number"></p>
+			<p> B4d     -     Psychiatric Hospital or Unit <input id="B4d" type="number"></p>
+			<p> B4e     -     Settings for Persons with Intellectual Disability <input id="B4e" type="number"></p>
 
 		</td>
 		<td>
 			<h4> LOC Safety: </h4>
+			<p>Interim Safety score from Part 1:</p>
+			<p id="loc_safety1"></p>
 
-			<p id="loc_safety"></p>
+			<p>Final Safety score after Part 2:</p>
+			<p id="loc_safety2"></p>
 
 			<button type="button" onclick="LOCSafety()"> Update </button>
 		</td>
