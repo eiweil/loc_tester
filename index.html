@@ -9,18 +9,23 @@
 
 	<h1> Missouri HCBS LOC Scoring Tool Version 2.3 </h1>
 
+<p> Helpful links: <a href="https://health.mo.gov/seniors/hcbs/pdf/loc-algorithm2-3.pdf">DHSS NF LOC algorithm</a>, <a href="https://health.mo.gov/seniors/hcbs/pdf/loc-determination-guide2-3.pdf">DHSS HCBS LOC determination guide</a>, <a href="https://www.btah.org/case-study/missouri-medicaid-home-and-community-based-services-eligibility-issues.html">BTAH Missouri Case Study</a></p>
+
+<p> <small> <i> To give feedback or report issues/problems with this web tool, please email emma@upturn.org </i> </small> </p>
+
 </center>
 	
 <div class="container"> 
 	
 		<div style="width:33%;padding-left:30px;">
-			<h4> Optional, for your recordkeeping: </h4>
+			<h4> Optional labels for your recordkeeping: </h4>
+			<p> <i>(For if you want to save or print this page — <br> This information doesn't get sent anywhere)</i> </p>
 			<p> ID: </p>
-			<input id="id" type="number" min="0" required>
-			<p> Category (elderly, mental health, etc): </p>
-			<input id="cat" type="text">
+			<input id="id" type="number" min="0">
+			<p> Notes (e.g. Category—elderly, mental health, etc): </p>
+			<textarea id="cat" rows="4" cols="30"></textarea>
 			<p> Old LOC total score: </p>
-			<input id="old_loc" type="number" min="0" max="81" required>
+			<input id="old_loc" type="number" min="0" max="81">
 			<p></p>
 			<p>_______________</p>
 			<p></p>
@@ -62,66 +67,70 @@
 		</div>
 		
 		<div style="width:50%;padding-right:30px;">
-			<p> A3     -    Age <input id="A3" type="number"></p>
-			<p> B4a    -    Long Term Care Facility <input id="B4a" type="number"></p>
-			<p> B4b    -    RCF/ALF <input id="B4b" type="number"></p>
-			<p> B4c    -    Mental Health Residence <input id="B4c" type="number"></p>
-			<p> B4d    -    Psychiatric Hospital or Unit <input id="B4d" type="number"></p>
-			<p> B4e    -    Settings for Persons with Intellectual Disability <input id="B4e" type="number"></p>
-			<p> C1     -    Cognitive Skills <input id="C1" type="number"> </p>
-			<p>	C2a    -    Short Term Memory <input id="C2a" type="number"> </p>
-			<p>	C2b    -    Procedural Memory <input id="C2b" type="number"> </p>
-			<p>	C2c    -    Situational Memory <input id="C2c" type="number"> </p>
-			<p>	C3c    -    Mental Function <input id="C3c" type="number"> </p>
-			<p>	D1     -    Making Self Understood <input id="D1" type="number"> </p>
-			<p>	D2     -    Ability to Understand Others <input id="D2" type="number"> </p>
-			<p> D4     -    Vision <input id="D4" type="number"></p>
-			<p> E3a    -    Wandering <input id="E3a" type="number"> </p>
-			<p>	E3c    -    Physical Abuse <input id="E3c" type="number"> </p>
-			<p>	E3d    -    Socially Inappropriate / Disruptive <input id="E3d" type="number"> </p>
-			<p>	E3e    -    Inappropriate Public Sexual Behavior <input id="E3e" type="number"> </p>
-			<p>	E3f    -    Resists Care <input id="E3f" type="number"> </p>
-			<p> G1a    -    Meal Prep <input id="G1a" type="number"></p>
-			<p> G1d    -    Managing Medications <input id="G1d" type="number"></p>
-			<p> G2a    -    Bathing <input id="G2a" type="number"></p>
-			<p> G2b    -    Personal Hygiene <input id="G2b" type="number"></p>
-			<p> G2c    -    Dressing Upper Body <input id="G2c" type="number"></p>
-			<p> G2d    -    Dressing Lower Body <input id="G2d" type="number"></p>
-			<p>	G2f    -    Locomotion <input id="G2f" type="number"></p>
-			<p> G2g    -    Transfer Toilet <input id="G2g" type="number"></p>
-			<p> G2h    -    Toilet Use <input id="G2h" type="number"></p>
-			<p>	G2i    -    Bed Mobility <input id="G2i" type="number"></p>
-			<p> G2j    -    Eating <input id="G2j" type="number"></p>
-			<p>	G3a    -    Primary mode of locomotion <input id="G3a" type="number"></p>
-			<p> H1     -    Bladder Continence <input id="H1" type="number"></p>
-			<p> H2     -    Urinary Collection Device <input id="H2" type="number"></p>
-			<p>	H3     -    Bowel Continence <input id="H3" type="number"></p>
-			<p> J1     -    Falls <input id="J1" type="number"></p>
-			<p> J3a    -    Problem frequency to move to standing position <input id="J3a" type="number"></p>
-			<p> J3b    -    Problem frequency to turn to face opposite direction <input id="J3b" type="number"></p>
-			<p> J3c    -    Problem frequency for dizziness <input id="J3c" type="number"></p>
-			<p> J3d    -    Problem frequency for unsteady gait <input id="J3d" type="number"></p>
-			<p>	J3g    -    Abnormal Thought Process <input id="J3g" type="number"> </p>
-			<p>	J3h    -    Delusions <input id="J3h" type="number"> </p>          
-			<p>	J3i    -    Hallucinations <input id="J3i" type="number"> </p>
-			<p> K2e    -    Therapeutic Diet <input id="K2e" type="number"></p>
-			<p>	K3     -    Mode of Nutrition <input id="K3" type="number"></p>
-			<p>	L1     -    Most Severe Pressure Ulcer <input id="L1" type="number"></p>
-			<p>	L3     -    Presence of Skin Ulcer Other than Pressure Ulcer <input id="L3" type="number"></p>
-			<p>	L4     -    Major Skin Problems <input id="L4" type="number"></p>
-			<p>	L5     -    Skin Tears of Cuts <input id="L5" type="number"></p>
-			<p>	N2g    -    Suctioning <input id="N2g" type="number"></p>
-			<p>	N2h    -    Tracheostomy Care <input id="N2h" type="number"></p>
-			<p>	N2j    -    Ventilator or Respirator <input id="N2j" type="number"></p>
-			<p>	N2k    -    Wound Care <input id="N2k" type="number"></p>
-			<p> N3ea   -    PT <input id="N3ea" type="number"></p>
-			<p>	N3fa   -    OT <input id="N3fa" type="number"></p>
-			<p>	N3ga   -    Speech <input id="N3ga" type="number"></p>
-			<p>	N3ia   -    Cardiac Rehab <input id="N3ia" type="number"></p>
-			<p>	N7b    -    Mental Condition <input id="N7b" type="number"> </p>	
+		<form>
+			<p> A3     -    Birthdate <input id="A3" placeholder="YYYY-MM-DD"><br><span id="birthdate">You entered: </span></p>
+			<p> A9	   -    Assessment reference date <input id="A9" placeholder="YYYY-MM-DD"><br><span id="assessdate">You entered: </span></p>
+			<p> Age at time of assessment: <span id="age">(will appear when you click "update scores")</span></p>
+			<p> B4a    -    Long Term Care Facility <input id="B4a" type="number" min="0" max="1"></p>
+			<p> B4b    -    RCF/ALF <input id="B4b" type="number" min="0" max="1"></p>
+			<p> B4c    -    Mental Health Residence <input id="B4c" type="number" min="0" max="1"></p>
+			<p> B4d    -    Psychiatric Hospital or Unit <input id="B4d" type="number" min="0" max="1"></p>
+			<p> B4e    -    Settings for Persons with Intellectual Disability <input id="B4e" type="number" min="0" max="1"></p>
+			<p> C1     -    Cognitive Skills <input id="C1" type="number" min="0" max="5"> </p>
+			<p> C2a    -    Short Term Memory <input id="C2a" type="number" min="0" max="1"> </p>
+			<p> C2b    -    Procedural Memory <input id="C2b" type="number" min="0" max="1"> </p>
+			<p> C2c    -    Situational Memory <input id="C2c" type="number" min="0" max="1"> </p>
+			<p> C3c    -    Mental Function <input id="C3c" type="number" min="0" max="2"> </p>
+			<p> D1     -    Making Self Understood <input id="D1" type="number" min="0" max="4"> </p>
+			<p> D2     -    Ability to Understand Others <input id="D2" type="number" min="0" max="4"> </p>
+			<p> D4     -    Vision <input id="D4" type="number" min="0" max="4"></p>
+			<p> E3a    -    Wandering <input id="E3a" type="number" min="0" max="3"> </p>
+			<p> E3c    -    Physical Abuse <input id="E3c" type="number" min="0" max="3"> </p>
+			<p> E3d    -    Socially Inappropriate / Disruptive <input id="E3d" type="number" min="0" max="3"> </p>
+			<p> E3e    -    Inappropriate Public Sexual Behavior <input id="E3e" type="number" min="0" max="3"> </p>
+			<p> E3f    -    Resists Care <input id="E3f" type="number" min="0" max="3"> </p>
+			<p> G1a    -    Meal Prep <input id="G1a" type="number" min="0" max="8"></p>
+			<p> G1d    -    Managing Medications <input id="G1d" type="number" min="0" max="8"></p>
+			<p> G2a    -    Bathing <input id="G2a" type="number" min="0" max="8"></p>
+			<p> G2b    -    Personal Hygiene <input id="G2b" type="number" min="0" max="8"></p>
+			<p> G2c    -    Dressing Upper Body <input id="G2c" type="number" min="0" max="8"></p>
+			<p> G2d    -    Dressing Lower Body <input id="G2d" type="number" min="0" max="8"></p>
+			<p> G2f    -    Locomotion <input id="G2f" type="number" min="0" max="8"></p>
+			<p> G2g    -    Transfer Toilet <input id="G2g" type="number" min="0" max="8"></p>
+			<p> G2h    -    Toilet Use <input id="G2h" type="number" min="0" max="8"></p>
+			<p> G2i    -    Bed Mobility <input id="G2i" type="number" min="0" max="8"></p>
+			<p> G2j    -    Eating <input id="G2j" type="number" min="0" max="8"></p>
+			<p> G3a    -    Primary mode of locomotion <input id="G3a" type="number" min="0" max="3"></p>
+			<p> H1     -    Bladder Continence <input id="H1" type="number" min="0" max="8"></p>
+			<p> H2     -    Urinary Collection Device <input id="H2" type="number" min="0" max="3"></p>
+			<p> H3     -    Bowel Continence <input id="H3" type="number" min="0" max="8"></p>
+			<p> J1     -    Falls <input id="J1" type="number" min="0" max="3"></p>
+			<p> J3a    -    Problem frequency to move to standing position <input id="J3a" type="number" min="0" max="4"></p>
+			<p> J3b    -    Problem frequency to turn to face opposite direction <input id="J3b" type="number" min="0" max="4"></p>
+			<p> J3c    -    Problem frequency for dizziness <input id="J3c" type="number" min="0" max="4"></p>
+			<p> J3d    -    Problem frequency for unsteady gait <input id="J3d" type="number" min="0" max="4"></p>
+			<p> J3g    -    Abnormal Thought Process <input id="J3g" type="number" min="0" max="4"> </p>
+			<p> J3h    -    Delusions <input id="J3h" type="number" min="0" max="4"> </p>          
+			<p> J3i    -    Hallucinations <input id="J3i" type="number" min="0" max="4"> </p>
+			<p> K2e    -    Therapeutic Diet <input id="K2e" type="number" min="0" max="1"></p>
+			<p> K3     -    Mode of Nutrition <input id="K3" type="number" min="0" max="9"></p>
+			<p> L1     -    Most Severe Pressure Ulcer <input id="L1" type="number" min="0" max="5"></p>
+			<p> L3     -    Presence of Skin Ulcer Other than Pressure Ulcer <input id="L3" type="number" min="0" max="1"></p>
+			<p> L4     -    Major Skin Problems <input id="L4" type="number" min="0" max="1"></p>
+			<p> L5     -    Skin Tears of Cuts <input id="L5" type="number" min="0" max="1"></p>
+			<p> N2g    -    Suctioning <input id="N2g" type="number" min="0" max="4"></p>
+			<p> N2h    -    Tracheostomy Care <input id="N2h" type="number" min="0" max="4"></p>
+			<p> N2j    -    Ventilator or Respirator <input id="N2j" type="number" min="0" max="4"></p>
+			<p> N2k    -    Wound Care <input id="N2k" type="number" min="0" max="4"></p>
+			<p> N3ea   -    PT (Column A - "Days of care in last 7 days") <input id="N3ea" type="number" min="0" max="7"></p>
+			<p> N3fa   -    OT (Column A - "Days of care in last 7 days") <input id="N3fa" type="number" min="0" max="7"></p>
+			<p> N3ga   -    Speech (Column A - "Days of care in last 7 days") <input id="N3ga" type="number" min="0" max="7"></p>
+			<p> N3ia   -    Cardiac Rehab (Column A - "Days of care in last 7 days") <input id="N3ia" type="number" min="0" max="7"></p>
+			<p> N7b    -    Mental Condition <input id="N7b" type="number" min="0" max="3"> </p>	
 			<p></p>
 			<p></p>
 			<p></p>
+		</form>
 		</div>
 
 </div>
