@@ -11,3 +11,6 @@ div.container div {
   padding-left:30px;
   padding-right:30px;
 }
+input {
+  width:100px;
+}
