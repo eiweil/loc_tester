@@ -336,11 +336,54 @@ function updateScores() {
 	var j3d = document.getElementById("J3d").value;
 
 	var a3 = document.getElementById("A3").value;
+	var a9 = document.getElementById("A9").value;
 	var b4a = document.getElementById("B4a").value;
 	var b4b = document.getElementById("B4b").value;
 	var b4c = document.getElementById("B4c").value;
 	var b4d = document.getElementById("B4d").value;
 	var b4e = document.getElementById("B4e").value;
+
+	// extracting the numbers from the input string so that I can convert to UTC lol
+	var a3_year = Number(a3.substr(0, 4));
+	var a3_month = Number(a3.substr(5, 2));
+	var a3_day = Number(a3.substr(8, 2));
+
+	var a3_date = new Date(Date.UTC(a3_year, (a3_month-1), (a3_day+1)));
+
+	// extracting the numbers from the input string so that I can convert to UTC
+	var a9_year = Number(a9.substr(0, 4));
+	var a9_month = Number(a9.substr(5, 2));
+	var a9_day = Number(a9.substr(8, 2));
+
+	var a9_date = new Date(Date.UTC(a9_year, (a9_month-1), (a9_day+1)));
+
+	var age = 0;
+
+	var valid_date_1 = true;
+	var valid_date_2 = true; 
+
+	// make sure the dates are valid
+	if (isNaN(a3_date) || a3_year < 1900 || a3_year > (new Date).getFullYear() || a3_month < 1 || a3_month > 12 || a3_day < 1 || a3_day > 31) {
+		document.getElementById("birthdate").innerHTML = "<i>Invalid birthdate entered. Please try again in format YYYY-MM-DD.</i>";
+		valid_date_1 = false;
+	}
+	if (isNaN(a9_date) || a9_year < 1900 || a9_month < 1 || a9_month > 12 || a9_day < 1 || a9_day > 31) {
+		document.getElementById("assessdate").innerHTML = "<i>Invalid assessment date entered. Please try again in format YYYY-MM-DD.</i>";
+		valid_date_2 = false;
+	}
+
+	if (valid_date_1 && valid_date_2) {
+		document.getElementById("birthdate").innerHTML = "You entered: " + a3_date.toDateString().substr(3) + ". <i>If that's wrong, check that you entered the correct date in YYYY-MM-DD format.</i>";
+		document.getElementById("assessdate").innerHTML = "You entered: " + a9_date.toDateString().substr(3) + ". <i>If that's wrong, check that you entered the correct date in YYYY-MM-DD format.</i>";
+
+		// convert each Date object to milliseconds and divide to convert to years, then round down (truncate) to get age at time of assessment
+		age = Math.trunc((a9_date.valueOf() - a3_date.valueOf()) / 31557600000);
+		document.getElementById("age").innerHTML = age;
+	}
+	else {
+		document.getElementById("age").innerHTML = "<i>Invalid date(s), can't compute age.</i>";
+	}
+
 
 	var new_loc_safety1 = 0;
 	var new_loc_safety2 = 0;
@@ -374,17 +417,17 @@ function updateScores() {
 
 // Safety pt 2	
 	if (new_loc_safety1 == 0 && 
-	   (a3 >= 75 || b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1)) {
+	   (age >= 75 || b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1)) {
 		new_loc_safety2 = 3; 
 	}
 
 	if (new_loc_safety1 == 0 && 
-	   (a3 >= 75 && (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
+	   (age >= 75 && (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
 		new_loc_safety2 = 6; 
 	}
 
 	if (new_loc_safety1 == 3 && 
-	   (a3 >= 75 || (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
+	   (age >= 75 || (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
 		new_loc_safety2 = 6; 
 	}
 
@@ -394,11 +437,11 @@ function updateScores() {
 	}
 
 	if (new_loc_safety1 == 3 && 
-	   (a3 >= 75 && (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
+	   (age >= 75 && (b4a == 1 || b4b == 1 || b4c == 1 || b4d == 1 || b4e == 1))) {
 		new_loc_safety2 = 18; // trigger
 	}
 
-	if (new_loc_safety1 == 6 && a3 >= 75) {
+	if (new_loc_safety1 == 6 && age >= 75) {
 		new_loc_safety2 = 18; // trigger 
 	}
 	
@@ -434,4 +477,3 @@ function updateScores() {
 function BatchProcess() {
 	// TODO
 }
-
